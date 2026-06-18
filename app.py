@@ -411,7 +411,7 @@ elif st.session_state.page == "question":
     floating_hearts(12)
 
     st.markdown('<div style="text-align:center;font-size:3rem;margin-top:0.8rem;">💕</div>', unsafe_allow_html=True)
-    st.markdown("<p class='question-title'>ARE YOU SAKSHI'S BOYFRIEND?</p>", unsafe_allow_html=True)
+    st.markdown("<p class='question-title'>ARE YOU SHAKSHI'S BOYFRIEND?</p>", unsafe_allow_html=True)
     st.markdown("<p class='question-sub'>Think very carefully before you answer… 🌸</p>", unsafe_allow_html=True)
 
     col_yes, col_no = st.columns(2, gap="medium")
