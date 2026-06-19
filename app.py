@@ -93,13 +93,13 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 .pw-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.7rem, 7vw, 2.6rem);
-    font-weight: 700; color: #8a1f4d;
+    font-weight: 700; color: #7a1d46;
     text-shadow: 0 0 30px rgba(255,100,160,0.5);
     line-height: 1.3; margin-bottom: 0.3rem;
 }
 .pw-hint {
     font-style: italic; font-size: clamp(0.82rem, 3vw, 0.95rem);
-    color: #6b2345; margin-bottom: 1.6rem;
+    color: #5a1238; margin-bottom: 1.6rem;
 }
 .pw-error {
     text-align: center; margin-top: 0.6rem;
@@ -122,7 +122,7 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 .q-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.7rem, 7vw, 2.8rem);
-    font-weight: 700; color: #8a1f4d;
+    font-weight: 700; color: #7a1d46;
     text-align: center;
     text-shadow: 0 0 30px rgba(255,100,160,0.45);
     line-height: 1.3; margin: 1.5rem 0 0.4rem;
@@ -130,7 +130,7 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 .q-sub {
     text-align: center; font-style: italic;
     font-size: clamp(0.85rem, 3vw, 1rem);
-    color: #6b2345; margin-bottom: 2rem;
+    color: #5a1238; margin-bottom: 2rem;
 }
 
 /* YES */
@@ -157,7 +157,7 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 .bday-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.2rem, 9vw, 3.8rem);
-    font-weight: 700; color: #8a1f4d;
+    font-weight: 700; color: #7a1d46;
     text-align: center; line-height: 1.2;
     text-shadow: 0 0 40px rgba(255,100,160,0.5);
     margin: 0.4rem 0 0.2rem;
@@ -229,14 +229,14 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 .gallery-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.35rem, 5.5vw, 2rem);
-    font-weight: 700; text-align: center; color: #8a1f4d;
+    font-weight: 700; text-align: center; color: #7a1d46;
     margin: 0.4rem 0 0.2rem;
     text-shadow: 0 0 20px rgba(255,100,160,0.3);
 }
 .gallery-sub {
     text-align: center; font-style: italic;
     font-size: clamp(0.78rem, 2.8vw, 0.9rem);
-    color: #6b2345; margin-bottom: 0.9rem;
+    color: #5a1238; margin-bottom: 0.9rem;
 }
 
 /* photo — circle, smaller, NO background card */
@@ -278,7 +278,7 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 }
 .swipe-row .arr .stButton > button {
     background: rgba(240,98,146,0.18) !important;
-    color: #8a1f4d !important;
+    color: #7a1d46 !important;
     border: 1.5px solid rgba(240,98,146,0.35) !important;
     border-radius: 50% !important;
     width: 2.4rem !important; height: 2.4rem !important;
@@ -298,15 +298,15 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 
 /* ══ FOOTER ═════════════════════════════════════════════════════════════════ */
 .footer { text-align: center; padding: 1.8rem 1rem 3.5rem; font-family: 'Cormorant Garamond', serif; }
-.footer-main { font-size: clamp(1.3rem, 5.5vw, 1.8rem); color: #8a1f4d; font-weight: 700; text-shadow: 0 0 20px rgba(255,100,160,0.35); }
-.footer-sub { font-size: clamp(0.85rem, 3.2vw, 1rem); color: #6b2345; font-style: italic; margin-top: 0.7rem; line-height: 1.85; }
+.footer-main { font-size: clamp(1.3rem, 5.5vw, 1.8rem); color: #7a1d46; font-weight: 700; text-shadow: 0 0 20px rgba(255,100,160,0.35); }
+.footer-sub { font-size: clamp(0.85rem, 3.2vw, 1rem); color: #5a1238; font-style: italic; margin-top: 0.7rem; line-height: 1.85; }
 .footer-hearts { font-size: clamp(1.5rem, 5vw, 2rem); margin-top: 1rem; letter-spacing: 5px; }
 
 /* ══ REASONS PAGE ═══════════════════════════════════════════════════════════ */
 .reasons-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.7rem, 7vw, 2.6rem);
-    font-weight: 700; text-align: center; color: #8a1f4d;
+    font-weight: 700; text-align: center; color: #7a1d46;
     text-shadow: 0 0 30px rgba(255,100,160,0.4);
     margin: 0.5rem 0 0.2rem; line-height: 1.25;
 }
@@ -318,14 +318,14 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
     line-height: 1.68; position: relative; z-index: 1;
     transition: background 0.2s, border-color 0.2s;
 }
-.reason-card:hover { background: #fff7fb; border-color: rgba(240,98,146,0.25); }
+.reason-card:hover { background: #fff8fc; border-color: rgba(240,98,146,0.25); }
 .reason-num {
     font-weight: 700; color: #f06292;
     font-size: 0.72rem; display: block; margin-bottom: 0.12rem; letter-spacing: 1px;
 }
 .endless {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: clamp(1rem, 3.8vw, 1.2rem); color: #8a1f4d;
+    font-size: clamp(1rem, 3.8vw, 1.2rem); color: #7a1d46;
     text-align: center; margin: 1.4rem 0 2rem;
     padding: 1rem 1.2rem;
     background: rgba(194,24,91,0.1);
@@ -335,7 +335,7 @@ div[data-testid="stColumn"], section[data-testid="stSidebar"] { background: tran
 .sm-wrap { display: flex; justify-content: center; margin: 0.7rem 0; }
 .sm-wrap .stButton > button {
     background: rgba(194,24,91,0.18) !important;
-    color: #8a1f4d !important;
+    color: #7a1d46 !important;
     border: 1.5px solid rgba(240,98,146,0.35) !important;
     border-radius: 50px !important;
     padding: 0.48rem 2rem !important;
@@ -443,7 +443,7 @@ if st.session_state.page == "password":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown(f"<h2 style='text-align:center;color:#8a1f4d;letter-spacing:8px'>{'*'*len(st.session_state.entered_pw)}</h2>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align:center;color:#7a1d46;letter-spacing:8px'>{'*'*len(st.session_state.entered_pw)}</h2>", unsafe_allow_html=True)
 
     keypad=[['1','2','3'],['4','5','6'],['7','8','9'],['⌫','0','✓']]
     for row in keypad:
@@ -508,7 +508,7 @@ elif st.session_state.page == "question":
             f'<div style="display:flex;justify-content:{a};margin-top:0.4rem;">'
             f'<span style="font-size:1.5rem;opacity:0.4;">💔</span></div>'
             f'<div style="text-align:center;margin-top:0.6rem;font-style:italic;'
-            f'color:#6b2345;font-size:0.9rem;">{msgs[m]}</div>',
+            f'color:#5a1238;font-size:0.9rem;">{msgs[m]}</div>',
             unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -581,7 +581,7 @@ elif st.session_state.page == "birthday":
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
     st.markdown("""
     <div class="footer">
-        <div class="footer-main">Happy Birthday, Daddy. 💖</div>
+        <div class="footer-main">Happy Birthday, my love. 💖</div>
         <div class="footer-sub">
             You are my favourite part of every single day.<br>
             I love you more than words will ever, ever manage to say. 🌹
@@ -606,7 +606,7 @@ elif st.session_state.page == "reasons":
                 unsafe_allow_html=True)
     st.markdown("<h1 class='reasons-title'>Reasons Why<br>I Love You 💌</h1>",
                 unsafe_allow_html=True)
-    st.markdown('<div style="text-align:center;font-style:italic;color:#6b2345;font-size:0.88rem;margin-bottom:1rem;">let me count the ways… 🌸</div>',
+    st.markdown('<div style="text-align:center;font-style:italic;color:#5a1238;font-size:0.88rem;margin-bottom:1rem;">let me count the ways… 🌸</div>',
                 unsafe_allow_html=True)
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
@@ -642,11 +642,11 @@ elif st.session_state.page == "secret":
     if st.button("← Back", key="secret_back"):
         st.session_state.page="birthday"
         st.rerun()
-    st.markdown("""<h1 class='reasons-title'>🔥 TO MY DEAREST BOYFRIEND 🔥</h1>""", unsafe_allow_html=True)
+    st.markdown("""<h1 class='reasons-title'>TO MY DEAREST BOYFRIEND</h1>""", unsafe_allow_html=True)
     st.markdown("""
     <div class="love-note">
     My love,<br><br>
     Every day I miss you, think about you, and imagine the moment I finally get to pull you close and never let go. You make my heart race in ways I never expected, and the distance only makes me want you more.<br><br>
-    I just cannot wait for the moment i will get to kiss you all over and touch you in ways you start to make those hot noises, make you hard, suck your dick, get fucked by you,make babies with you, marry you, hold your hand till i die, but until then, keep this as a reminder that you're loved, desired, and constantly on my mind. ❤️
+    I just cannot wait for the moment i will get to kiss you all over and touch you in ways you start to make those hot noises,make you hard, suck your dick, get fucked by you, make babies with you, marry you, love you, hold your hand till i die, but until then, keep this as a reminder that you're loved, desired, and constantly on my mind. ❤️
     </div>
     """, unsafe_allow_html=True)
