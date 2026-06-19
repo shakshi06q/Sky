@@ -525,7 +525,7 @@ elif st.session_state.page == "birthday":
             st.session_state.page = "reasons"
             st.session_state.reasons_shown = 10
             st.rerun()
-        if st.button("🔥 Secret Letter", key="go_secret"):
+        if st.button("LETTER", key="go_secret"):
             st.session_state.page = "secret"
             st.session_state.reasons_shown = 10
             st.rerun()
@@ -642,12 +642,12 @@ elif st.session_state.page == "secret":
     if st.button("← Back", key="secret_back"):
         st.session_state.page="birthday"
         st.rerun()
-    st.markdown("""<h1 class='reasons-title'>🔥 Secret Letter 🔥</h1>""", unsafe_allow_html=True)
+    st.markdown("""<h1 class='reasons-title'>TO MY DEAREST BOYFRIEND</h1>""", unsafe_allow_html=True)
     st.markdown("""
     <div class="love-note">
     My love,<br><br>
     Every day I miss you, think about you, and imagine the moment I finally get to pull you close and never let go. You make my heart race in ways I never expected, and the distance only makes me want you more.<br><br>
-    I just cannot wait for the moment i will get to kiss you all over and touch you in ways you start to make those hot noises but until then, keep this as a reminder that you're loved, desired, and constantly on my mind. ❤️
+    I just cannot wait for the moment i will get to kiss you all over and touch you in ways you start to make those hot noises, make you hard, suck your dick. get fucked by you, make babies with you, marry you, hold your hand till i die, but until then, keep this as a reminder that you're loved, desired, and constantly on my mind. ❤️
     </div>
     """, unsafe_allow_html=True)
 st.markdown('''
