@@ -430,29 +430,67 @@ PICS = [
     ("images/photo4.jpeg", "That LAUGH. Full-face, eyes-squeezed-shut, completely unguarded — that is the laugh I want to spend the rest of my life causing. You have no idea how much I love you. 🥹💗"),
 ]
 
+# ══════════════════════════════════════════════════════════════════════════════
+# PASSWORD
+# ══════════════════════════════════════════════════════════════════════════════
+if st.session_state.page == "password":
+    floating_hearts(8)
+    st.markdown("""
+    <div class="pw-wrap">
+        <div class="pw-lock">🔒</div>
+        <div class="pw-title">This is for someone<br>very special 🌸</div>
+        <div class="pw-hint">Hint: the day we met — DDMMYYYY</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f"<h2 style='text-align:center;color:#ffb3d1;letter-spacing:8px'>{'*'*len(st.session_state.entered_pw)}</h2>", unsafe_allow_html=True)
+
+    keypad=[['1','2','3'],['4','5','6'],['7','8','9'],['⌫','0','✓']]
+    for row in keypad:
+        cols=st.columns(3)
+        for i,key in enumerate(row):
+            with cols[i]:
+                if st.button(key, key=f"kp_{key}", use_container_width=True):
+                    if key=='⌫':
+                        st.session_state.entered_pw=st.session_state.entered_pw[:-1]
+                    elif key=='✓':
+                        if st.session_state.entered_pw==PASSWORD:
+                            st.session_state.page='question'
+                            st.session_state.pw_error=False
+                            st.rerun()
+                        else:
+                            st.session_state.pw_error=True
+                    else:
+                        if len(st.session_state.entered_pw)<8:
+                            st.session_state.entered_pw+=key
+                    st.rerun()
+
+    if st.session_state.pw_error:
+        st.markdown('<p class="pw-error">Hmm, that\'s not right… think about when everything started 💕</p>',
+                    unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # QUESTION
 # ══════════════════════════════════════════════════════════════════════════════
-st.session_state.page == "question"
-floating_hearts(12)
-st.markdown('<div style="text-align:center;font-size:3rem;margin-top:1.2rem;">💕</div>',
+elif st.session_state.page == "question":
+    floating_hearts(12)
+    st.markdown('<div style="text-align:center;font-size:3rem;margin-top:1.2rem;">💕</div>',
                 unsafe_allow_html=True)
-st.markdown("<p class='q-title'>ARE YOU<br>SHAKSHI'S BOYFRIEND?</p>", unsafe_allow_html=True)
-st.markdown("<p class='q-sub'>Think very carefully before you answer… 🌸</p>",
+    st.markdown("<p class='q-title'>ARE YOU<br>SHAKSHI'S BOYFRIEND?</p>", unsafe_allow_html=True)
+    st.markdown("<p class='q-sub'>Think very carefully before you answer… 🌸</p>",
                 unsafe_allow_html=True)
 
-c1, c2 = st.columns(2, gap="medium")
-with c1:
+    c1, c2 = st.columns(2, gap="medium")
+    with c1:
         if st.button("YES 💖", key="yes_btn", use_container_width=True):
             st.session_state.page = "birthday"
             st.rerun()
-with c2:
+    with c2:
         if st.button("NO 💔", key="no_btn", use_container_width=True):
             st.session_state.no_pos += 1
             st.rerun()
 
-if st.session_state.no_pos > 0:
+    if st.session_state.no_pos > 0:
         msgs = [
             "Are you sure about that? 🌸",
             "That button keeps running away… 💕",
@@ -460,8 +498,8 @@ if st.session_state.no_pos > 0:
             "Just click YES, babe, come on 💖",
             "I'm not letting you go that easily 🌹",
             "Come On Daddyyyy",
-            "Dont you Love Me????",
-            "Ughhhh Fuck Youuu",
+            "Dont you Love Me????"
+            "Ughhhh Fuck Youuu"
         ]
         aligns = ["flex-end","flex-start","center","flex-end","flex-start"]
         m = min(st.session_state.no_pos - 1, len(msgs)-1)
@@ -604,7 +642,7 @@ elif st.session_state.page == "secret":
     if st.button("← Back", key="secret_back"):
         st.session_state.page="birthday"
         st.rerun()
-    st.markdown("""<h1 class='reasons-title'>TO MY DEAREST BOYFRIEND</h1>""", unsafe_allow_html=True)
+    st.markdown("""<h1 class='reasons-title'>🔥 Secret Letter 🔥</h1>""", unsafe_allow_html=True)
     st.markdown("""
     <div class="love-note">
     My love,<br><br>
@@ -644,4 +682,3 @@ p,span,label,div{
 }
 </style>
 ''', unsafe_allow_html=True)
-
