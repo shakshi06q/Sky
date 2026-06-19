@@ -498,8 +498,8 @@ elif st.session_state.page == "question":
             "Just click YES, babe, come on 💖",
             "I'm not letting you go that easily 🌹",
             "Come On Daddyyyy",
-            "Dont you Love Me????",
-            "Ughhhh Fuck Youuu",
+            "Dont you Love Me????"
+            "Ughhhh Fuck Youuu"
         ]
         aligns = ["flex-end","flex-start","center","flex-end","flex-start"]
         m = min(st.session_state.no_pos - 1, len(msgs)-1)
@@ -525,7 +525,7 @@ elif st.session_state.page == "birthday":
             st.session_state.page = "reasons"
             st.session_state.reasons_shown = 10
             st.rerun()
-        if st.button("🔥 Secret Letter", key="go_secret"):
+        if st.button("love Letter", key="go_secret"):
             st.session_state.page = "secret"
             st.session_state.reasons_shown = 10
             st.rerun()
@@ -594,183 +594,91 @@ elif st.session_state.page == "birthday":
 # REASONS
 # ══════════════════════════════════════════════════════════════════════════════
 elif st.session_state.page == "reasons":
-
     floating_hearts(18)
 
     st.markdown('<div class="back-btn">', unsafe_allow_html=True)
-
     if st.button("← Back", key="back_top"):
         st.session_state.page = "birthday"
         st.rerun()
-
     st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown(
-        '<div style="text-align:center;font-size:2.4rem;margin:0.4rem 0;">💕</div>',
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        "<h1 class='reasons-title'>Reasons Why<br>I Love You 💌</h1>",
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        '<div style="text-align:center;font-style:italic;color:#5a1238;font-size:0.88rem;margin-bottom:1rem;">let me count the ways… 🌸</div>',
-        unsafe_allow_html=True
-    )
-
+    st.markdown('<div style="text-align:center;font-size:2.4rem;margin:0.4rem 0;">💕</div>',
+                unsafe_allow_html=True)
+    st.markdown("<h1 class='reasons-title'>Reasons Why<br>I Love You 💌</h1>",
+                unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center;font-style:italic;color:rgba(255,180,210,0.5);font-size:0.88rem;margin-bottom:1rem;">let me count the ways… 🌸</div>',
+                unsafe_allow_html=True)
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
     for i, r in enumerate(REASONS[:st.session_state.reasons_shown], 1):
-
         st.markdown(
-            f'''
-            <div class="reason-card">
-                <span class="reason-num">#{i}</span>
-                {r}
-            </div>
-            ''',
-            unsafe_allow_html=True
-        )
+            f'<div class="reason-card"><span class="reason-num">#{i}</span>{r}</div>',
+            unsafe_allow_html=True)
 
     if st.session_state.reasons_shown < len(REASONS):
-
         st.markdown('<div class="sm-wrap">', unsafe_allow_html=True)
-
         if st.button("Show More 💖", key="show_more"):
-            st.session_state.reasons_shown = min(
-                st.session_state.reasons_shown + 10,
-                len(REASONS)
-            )
+            st.session_state.reasons_shown = min(st.session_state.reasons_shown + 10, len(REASONS))
             st.rerun()
-
         st.markdown('</div>', unsafe_allow_html=True)
-
     else:
-
         st.markdown(
-            '''
-            <div class="endless">
-                …and I could keep going on. 💕<br>
-                <span style="font-size:0.9em;">
-                    There aren't enough reasons in the world
-                    to hold everything I feel for you.
-                </span>
-            </div>
-            ''',
-            unsafe_allow_html=True
-        )
-
-        # 💌 LETTER APPEARS ONLY AFTER ALL REASONS ARE REVEALED
-
-        st.markdown(
-            """
-            <div style="
-                background:white;
-                border:2px solid #ffb6d5;
-                border-radius:25px;
-                padding:28px;
-                margin-top:35px;
-                box-shadow:0 8px 25px rgba(255,182,193,0.25);
-            ">
-
-                <h2 style="
-                    text-align:center;
-                    color:#4a1030;
-                    margin-bottom:20px;
-                ">
-                    💌 A Letter For You 💌
-                </h2>
-
-                <p style="
-                    color:#4a1030;
-                    line-height:1.9;
-                    font-size:1.05rem;
-                ">
-
-                My love,
-
-                <br><br>
-
-                If you've reached this part, it means you've already read all the reasons I love you.
-
-                <br><br>
-
-                Even after all those reasons, I still don't think I've managed to explain what you truly mean to me.
-
-                <br><br>
-
-                You are the first person I think about when something good happens.
-
-                <br><br>
-
-                You are the person I want to tell everything to.
-
-                <br><br>
-
-                You are the person who makes ordinary days feel special.
-
-                <br><br>
-
-                Sometimes I imagine the day when there are no screens between us,
-                no distance,
-                and no goodbyes.
-
-                <br><br>
-
-                Just you and me.
-
-                <br><br>
-
-                I imagine stealing the longest hug,
-                holding your hand,
-                and finally getting to be close to you whenever I want.
-
-                <br><br>
-
-                Until then,
-                I hope this little app reminds you how loved you are.
-
-                <br><br>
-
-                More than words.<br>
-                More than these reasons.<br>
-                More than this letter can ever explain.
-
-                <br><br>
-
-                ❤️
-
-                <br><br>
-
-                Forever yours,
-
-                <br><br>
-
-                <b>Shakshi</b>
-
-                </p>
-
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            '<div class="endless">…and I could keep going on. 💕<br>'
+            '<span style="font-size:0.9em;">There aren\'t enough reasons in the world '
+            'to hold everything I feel for you.</span></div>',
+            unsafe_allow_html=True)
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
-
     _, bc, _ = st.columns([1, 2, 1])
-
     with bc:
-
         st.markdown('<div class="back-btn">', unsafe_allow_html=True)
-
-        if st.button(
-            "← Back to Birthday 💖",
-            key="back_bot",
-            use_container_width=True
-        ):
+        if st.button("← Back to Birthday 💖", key="back_bot", use_container_width=True):
             st.session_state.page = "birthday"
             st.rerun()
-
         st.markdown('</div>', unsafe_allow_html=True)
+
+elif st.session_state.page == "secret":
+    floating_hearts(18)
+    if st.button("← Back", key="secret_back"):
+        st.session_state.page="birthday"
+        st.rerun()
+    st.markdown("""<h1 class='reasons-title'>TO MY DEAREST BOYFRIEND</h1>""", unsafe_allow_html=True)
+    st.markdown("""
+    <div class="love-note">
+    My love,<br><br>
+    Every day I miss you, think about you, and imagine the moment I finally get to pull you close and never let go. You make my heart race in ways I never expected, and the distance only makes me want you more.<br><br>
+    I just cannot wait for the moment i will get to kiss you all over and touch you in ways you start to make those hot noises,make you hard,suck your dick, get fucked by you, make babies with you, marry you, love you, hold your hand till i die, but until then, keep this as a reminder that you're loved, desired, and constantly on my mind. ❤️
+    </div>
+    """, unsafe_allow_html=True)
+st.markdown('''
+<style>
+html, body, [class*="css"]{
+    color:#4a1030 !important;
+}
+.stApp{
+    background:#fff5fa !important;
+}
+h1,h2,h3,h4,h5,h6{
+    color:#4a1030 !important;
+}
+p,span,label,div{
+    color:#5a1238 !important;
+}
+.stButton > button{
+    background:white !important;
+    color:#4a1030 !important;
+    border:2px solid #ffb6d5 !important;
+    border-radius:18px !important;
+    font-weight:700 !important;
+}
+.stButton > button:hover{
+    background:#fff0f7 !important;
+    color:#4a1030 !important;
+}
+.pin-display{
+    background:transparent !important;
+    border:none !important;
+    color:#4a1030 !important;
+}
+</style>
+''', unsafe_allow_html=True)
