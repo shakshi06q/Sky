@@ -498,8 +498,8 @@ elif st.session_state.page == "question":
             "Just click YES, babe, come on 💖",
             "I'm not letting you go that easily 🌹",
             "Come On Daddyyyy",
-            "Dont you Love Me????"
-            "Ughhhh Fuck Youuu"
+            "Dont you Love Me????",
+            "Ughhhh Fuck Youuu",
         ]
         aligns = ["flex-end","flex-start","center","flex-end","flex-start"]
         m = min(st.session_state.no_pos - 1, len(msgs)-1)
