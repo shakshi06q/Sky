@@ -5,7 +5,7 @@ from datetime import date
 import base64
 
 st.set_page_config(
-    page_title="Happy Birthday, My Love 💕",
+    page_title="Happy Birthday, MERI JAAAAAAAAAAN 💕",
     page_icon="💖",
     layout="centered",
     initial_sidebar_state="collapsed",
@@ -425,8 +425,8 @@ REASONS = [
 
 PICS = [
     ("images/photo1.jpeg", "You were literally brushing your teeth on a video call and I still thought you were the most beautiful person I'd ever seen. I would screenshot this a thousand times over. 💕"),
-    ("images/photo2.jpeg", "The sunset, the Adidas fit, that smile, the thumbs up — like you already know you've completely ruined my day just by existing. God, you are so unfairly attractive. 🌅💖"),
-    ("images/photo3.jpeg", "Face mask on, earring in, not a single care in the world — and I was already completely gone for you. Soft, silly, and entirely mine. 🌿🥺"),
+    ("images/photo2.jpeg", "That smile, the thumbs up — like you already know you've completely ruined my day just by existing. God, you are so unfairly attractive. 🌅💖"),
+    ("images/photo3.jpeg", "You Look so effortlessly beautiful in everything you do. God i could stare at you my whole life. 🌿🥺"),
     ("images/photo4.jpeg", "That LAUGH. Full-face, eyes-squeezed-shut, completely unguarded — that is the laugh I want to spend the rest of my life causing. You have no idea how much I love you. 🥹💗"),
 ]
 
@@ -443,20 +443,27 @@ if st.session_state.page == "password":
     </div>
     """, unsafe_allow_html=True)
 
-    pw = st.text_input("", placeholder="Enter password…", type="password",
-                       key="pw_field", label_visibility="collapsed")
-    _, c, _ = st.columns([1, 3, 1])
-    with c:
-        st.markdown('<div class="open-btn">', unsafe_allow_html=True)
-        if st.button("Open 💖", key="pw_submit", use_container_width=True):
-            if pw.strip() == PASSWORD:
-                st.session_state.page = "question"
-                st.session_state.pw_error = False
-                st.rerun()
-            else:
-                st.session_state.pw_error = True
-                st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align:center;color:#ffb3d1;letter-spacing:8px'>{'*'*len(st.session_state.entered_pw)}</h2>", unsafe_allow_html=True)
+
+    keypad=[['1','2','3'],['4','5','6'],['7','8','9'],['⌫','0','✓']]
+    for row in keypad:
+        cols=st.columns(3)
+        for i,key in enumerate(row):
+            with cols[i]:
+                if st.button(key, key=f"kp_{key}", use_container_width=True):
+                    if key=='⌫':
+                        st.session_state.entered_pw=st.session_state.entered_pw[:-1]
+                    elif key=='✓':
+                        if st.session_state.entered_pw==PASSWORD:
+                            st.session_state.page='question'
+                            st.session_state.pw_error=False
+                            st.rerun()
+                        else:
+                            st.session_state.pw_error=True
+                    else:
+                        if len(st.session_state.entered_pw)<8:
+                            st.session_state.entered_pw+=key
+                    st.rerun()
 
     if st.session_state.pw_error:
         st.markdown('<p class="pw-error">Hmm, that\'s not right… think about when everything started 💕</p>',
@@ -490,9 +497,9 @@ elif st.session_state.page == "question":
             "The universe is literally telling you something 😭",
             "Just click YES, babe, come on 💖",
             "I'm not letting you go that easily 🌹",
-            "Come on Daddyy",
-            "Dont you Love Me????",
-            "Fuckkk Youuu",
+            "Come On Daddyyyy",
+            "Dont you Love Me????"
+            "Ughhhh Fuck Youuu"
         ]
         aligns = ["flex-end","flex-start","center","flex-end","flex-start"]
         m = min(st.session_state.no_pos - 1, len(msgs)-1)
@@ -518,6 +525,10 @@ elif st.session_state.page == "birthday":
             st.session_state.page = "reasons"
             st.session_state.reasons_shown = 10
             st.rerun()
+        if st.button("🔥 Secret Letter", key="go_secret"):
+            st.session_state.page = "secret"
+            st.session_state.reasons_shown = 10
+            st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
     # header
@@ -525,7 +536,7 @@ elif st.session_state.page == "birthday":
     <div style="text-align:center;font-size:clamp(1.6rem,6vw,2.2rem);
                 letter-spacing:6px;margin:0.1rem 0;">💖 🌸 💖 🌸 💖</div>
     """, unsafe_allow_html=True)
-    st.markdown("<h1 class='bday-title'>Happy Birthday,<br>Meri Jaan🎂</h1>",
+    st.markdown("<h1 class='bday-title'>Happy Birthday,<br>My Love 🎂</h1>",
                 unsafe_allow_html=True)
     st.markdown("<p class='bday-sub'>Today the world got a little more beautiful<br>because it's your day. 🌹</p>",
                 unsafe_allow_html=True)
@@ -553,50 +564,20 @@ elif st.session_state.page == "birthday":
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
-    # ── PHOTO SWIPER ──────────────────────────────────────────────────────────
-    st.markdown("<h2 class='gallery-title'>📸 My Favourite Pics of You</h2>",
-                unsafe_allow_html=True)
-    st.markdown("<p class='gallery-sub'>moments I've saved in my heart 🌸</p>",
-                unsafe_allow_html=True)
+    # ── PHOTO GALLERY ──────────────────────────────────────────────────────────
+    st.markdown("<h2 class='gallery-title'>📸 My Favourite Pics of You</h2>", unsafe_allow_html=True)
+    st.markdown("<p class='gallery-sub'>moments I've saved in my heart 🌸</p>", unsafe_allow_html=True)
 
-    idx = st.session_state.photo_idx
-    img_path, caption = PICS[idx]
-
-    if Path(img_path).exists():
-        b64 = img_to_b64(img_path)
-        img_tag = f'<img class="photo-img" src="data:image/jpeg;base64,{b64}" alt="photo">'
-    else:
-        img_tag = '<div style="width:min(52vw,200px);height:min(52vw,200px);border-radius:50%;background:rgba(240,98,146,0.15);display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto;border:2.5px solid rgba(240,98,146,0.4);">📷</div>'
-
-    dots = "".join(f'<span class="{"da" if i==idx else "di"}"></span>' for i in range(len(PICS)))
-
-    st.markdown(f"""
-    <div class="photo-wrap">
-        {img_tag}
-        <p class="photo-caption">{caption}</p>
-        <div class="photo-dots">{dots}</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # tight arrow row — use 5 columns, arrows in cols 1 and 3, counter in col 2
-    _, ac1, cc, ac2, _ = st.columns([2, 1, 1, 1, 2])
-    with ac1:
-        st.markdown('<div class="swipe-row"><div class="arr">', unsafe_allow_html=True)
-        if st.button("←", key="prev_p"):
-            st.session_state.photo_idx = (idx - 1) % len(PICS)
-            st.rerun()
-        st.markdown('</div></div>', unsafe_allow_html=True)
-    with cc:
-        st.markdown(f'<div class="swipe-counter">{idx+1}/{len(PICS)}</div>',
-                    unsafe_allow_html=True)
-    with ac2:
-        st.markdown('<div class="swipe-row"><div class="arr">', unsafe_allow_html=True)
-        if st.button("→", key="next_p"):
-            st.session_state.photo_idx = (idx + 1) % len(PICS)
-            st.rerun()
-        st.markdown('</div></div>', unsafe_allow_html=True)
-
-    # footer
+    for img_path, caption in PICS:
+        if Path(img_path).exists():
+            b64 = img_to_b64(img_path)
+            st.markdown(f'''
+            <div class="photo-wrap" style="margin-bottom:40px;">
+                <img class="photo-img" src="data:image/jpeg;base64,{b64}">
+                <p class="photo-caption">{caption}</p>
+            </div>
+            ''', unsafe_allow_html=True)
+# footer
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
     st.markdown("""
     <div class="footer">
@@ -656,30 +637,16 @@ elif st.session_state.page == "reasons":
             st.rerun()
         st.markdown('</div>', unsafe_allow_html=True)
 
-
-# SECRET PAGE
 elif st.session_state.page == "secret":
-    floating_hearts(20)
-    if st.button("← Back"):
-        st.session_state.page = "birthday"
+    floating_hearts(18)
+    if st.button("← Back", key="secret_back"):
+        st.session_state.page="birthday"
         st.rerun()
-
+    st.markdown("""<h1 class='reasons-title'>🔥 Secret Letter 🔥</h1>""", unsafe_allow_html=True)
     st.markdown("""
-    <h1 style='text-align:center;color:#ffb3d1'>🔥 Secret Letter 🔥</h1>
     <div class="love-note">
     My love,<br><br>
-    Every day I spend with you makes me want you more.
-    Sometimes I think about the first thing I'll do when
-    the distance finally disappears and I can hold you
-    without a screen between us.
-
-    I'll pull you close, steal the longest kiss you've
-    ever had, and make up for every moment we've spent apart.
-    Make love to you, Kiss you all over your body till i hear those noise.
-
-    Until then, just know that you live in my thoughts
-    far more often than I should probably admit. ❤️
-    <br><br>
-    Forever yours ❤️
+    Every day I miss you, think about you, and imagine the moment I finally get to pull you close and never let go. You make my heart race in ways I never expected, and the distance only makes me want you more.<br><br>
+    I just cannot wait for the moment i will get to kiss you all over and touch you in ways you start to make those hot noises but until then, keep this as a reminder that you're loved, desired, and constantly on my mind. ❤️
     </div>
     """, unsafe_allow_html=True)
